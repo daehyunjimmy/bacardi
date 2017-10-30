@@ -76,6 +76,26 @@ describe('add function test for long type', () => {
   });
 });
 
+describe('addByte function test for byte type', () => {
+  it('should be equal with expected value', () => {
+    assert.equal(calculator.addByte(1, 2), 1 + 2);
+    assert.equal(calculator.addByte(3, 4), 3 + 4);
+    assert.equal(calculator.addByte(3, -4), 3 + -4);
+    assert.equal(calculator.addByte(-3, 4), -3 + 4);
+    assert.equal(calculator.addByte(1, 0), 1 + 0);
+  });
+});
+
+describe('addOctet function test for octet type', () => {
+  it('should be equal with expected value', () => {
+    assert.equal(calculator.addOctet(1, 2), 1 + 2);
+    assert.equal(calculator.addOctet(3, 4), 3 + 4);
+    assert.equal(calculator.addOctet(3, -4), 3 + -4);
+    assert.equal(calculator.addOctet(-3, 4), -3 + 4);
+    assert.equal(calculator.addOctet(1, 0), 1 + 0);
+  });
+});
+
 describe('sub function test for short type', () => {
   it('should be equal with expected value', () => {
     assert.equal(calculator.sub(1, 2), 1 - 2);

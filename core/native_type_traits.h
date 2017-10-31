@@ -139,10 +139,10 @@ struct NativeTypeTraits<IDLLongLong>
   }
 };
 
-// The octet type is a unsigned integer type that has values in the range [0, 255].
+// The octet type is an unsigned integer type that has values in the range [0, 255].
 template <>
 struct NativeTypeTraits<IDLOctet> : public NativeTypeTraitsBase<IDLOctet> {
-  static int8_t NativeValue(const Napi::Env& env, const Napi::Value& js_value) {
+  static uint8_t NativeValue(const Napi::Env& env, const Napi::Value& js_value) {
     if (!js_value.IsNumber()) {
       Napi::TypeError::New(env, "It's an invalid number.")
           .ThrowAsJavaScriptException();

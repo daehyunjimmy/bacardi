@@ -62,7 +62,8 @@ struct NativeTypeTraits<IDLBoolean> : public NativeTypeTraitsBase<IDLBoolean> {
   }
 };
 
-// The byte type is a signed integer type that has values in the range [-128, 127].
+// The byte type is a signed integer type that has values in the range [-128,
+// 127].
 template <>
 struct NativeTypeTraits<IDLByte> : public NativeTypeTraitsBase<IDLByte> {
   static int8_t NativeValue(const Napi::Env& env, const Napi::Value& js_value) {
@@ -139,10 +140,12 @@ struct NativeTypeTraits<IDLLongLong>
   }
 };
 
-// The octet type is an unsigned integer type that has values in the range [0, 255].
+// The octet type is an unsigned integer type that has values in the range [0,
+// 255].
 template <>
 struct NativeTypeTraits<IDLOctet> : public NativeTypeTraitsBase<IDLOctet> {
-  static uint8_t NativeValue(const Napi::Env& env, const Napi::Value& js_value) {
+  static uint8_t NativeValue(const Napi::Env& env,
+                             const Napi::Value& js_value) {
     if (!js_value.IsNumber()) {
       Napi::TypeError::New(env, "It's an invalid number.")
           .ThrowAsJavaScriptException();
